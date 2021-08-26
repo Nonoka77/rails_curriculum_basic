@@ -26,12 +26,12 @@
         </li>
 
         <li class='nav-item'>
-          <%= link_to 'ログアウト', logout_path,  method: :delete, class: 'dropdown-item' %>
+          <%= link_to (t 'defaults.logout'), logout_path,  method: :delete, class: 'dropdown-item' %>
         </li>
 
       <% else %>
         <li class='nav-item'>
-            <%= link_to 'ログイン', login_path, class: 'dropdown-item' %>
+            <%= link_to (t 'defaults.login'), login_path, class: 'dropdown-item' %>
         </li>
         
       <% end %>
@@ -44,7 +44,7 @@
             <div class='dropdown-item'>らんてっく たろう</div>
             <div class='dropdown-divider'></div>
             <%= link_to 'プロフィール', '#', class: 'dropdown-item' %>
-            <%= link_to "ログアウト", logout_path, method: :delete, class: 'dropdown_items' %>
+            <%= link_to (t 'defaults.logout'), logout_path, method: :delete, class: 'dropdown_items' %>
           </div>
         </li>
       </ul>
