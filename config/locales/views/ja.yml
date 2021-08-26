@@ -1,0 +1,18 @@
+ja:
+  defaults:
+    login: 'ログイン'
+    register: '登録'
+    logout: 'ログアウト'
+    email: 'メールアドレス'
+    password: 'パスワード'
+  users:
+    new:
+      title: 'ログイン登録'
+      to_login_page: 'ログインページへ'
+      last_name: '姓'
+      first_name: '名'
+  user_sessions:
+    new:
+      title: 'ログイン'
+      to_register_page: '登録ページへ'
+      password_forget: 'パスワードをお忘れの方はこちら'
