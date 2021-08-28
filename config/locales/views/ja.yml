@@ -29,7 +29,11 @@ ja:
       title: '掲示板一覧'
       fail: ' 掲示板がありません'
     new:
-      title: '掲示板作成'
+      new_title: '掲示板作成'
+      success: "%{item}を作成しました"
+      fail: "%{item}を作成できませんでした"
+      title: 'タイトル' 
+      body: '本文'
     bookmarks:
       title: 'ブックマーク一覧'
   profiles:
