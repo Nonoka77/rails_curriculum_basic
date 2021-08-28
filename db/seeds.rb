@@ -18,7 +18,7 @@ end
 20.times do |n|
     Board.create! ({
         title: "タイトル #{n + 1}",
-        body: " 本文　#{n + 1}",
+        body: " 本文#{n + 1}",
         user: User.offset(rand(User.count)).first
     })
 end
