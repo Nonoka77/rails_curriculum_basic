@@ -17,7 +17,7 @@
                 </div>
                 <ul class="list-inline">
                   <li class="list-inline-item"><i class="far fa-user"></i> <%= board.user.decorate.full_name %></li>
-                  <li class="list-inline-item"><i class="far fa-calendar"></i><%= l board.created_at %></li>
+                  <li class="list-inline-item"><i class="far fa-calendar"></i><%= l board.created_at, format: :defaults %></li>
                 </ul>
                 <p class="card-text"><%= board.body %></p>
               </div>
