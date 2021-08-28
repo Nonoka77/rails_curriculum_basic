@@ -6,6 +6,7 @@ ja:
     login: 'ログイン'
     register: '登録'
     logout: 'ログアウト'
+    require_login: 'ログインしてください'
   users:
     new:
       title: 'ユーザー登録'
@@ -26,7 +27,7 @@ ja:
   boards:
     index:
       title: '掲示板一覧'
-      fail: ' 掲示板がありません。'
+      fail: ' 掲示板がありません'
     new:
       title: '掲示板作成'
     bookmarks:

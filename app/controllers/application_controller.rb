@@ -5,6 +5,6 @@ class ApplicationController < ActionController::Base
   private
 
   def not_authenticated
-    redirect_to login_path, danger: 'ログインしてください '
+    redirect_to login_path, warning: t('defaults.require_login')
   end
 end
