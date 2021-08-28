@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'static_pages/top', to: 'static_pages#top'
   get 'boards/index', to: 'boards#index'
 
-  resources :users, only: %i[new create]
+  resources :users, only: %i[new create index]
 
   get '/login', to: 'user_sessions#new', as: :login
   post 'login', to: 'user_sessions#create'
