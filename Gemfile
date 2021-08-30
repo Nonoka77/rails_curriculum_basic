@@ -72,3 +72,5 @@ gem 'pry-byebug'
 gem 'rails-i18n'
 gem 'draper'
 gem 'font-awesome-sass'
+gem 'carrierwave', '~> 2.0'
+gem "mini_magick"
