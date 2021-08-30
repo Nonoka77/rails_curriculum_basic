@@ -25,8 +25,10 @@ ja:
     destroy:
       success: 'ログアウトしました'
   boards:
+    defaults:
+      board_image: 'サムネイル'
     index:
-      title: '掲示板一覧'
+      index_title: '掲示板一覧'
       fail: ' 掲示板がありません'
     new:
       new_title: '掲示板作成'
