@@ -15,7 +15,6 @@ class BoardsController < ApplicationController
         @board = current_user.boards.new(board_params)
         if @board.save
             redirect_to boards_path, success: t('boards.new.success', item: Board.model_name.human)
-            @board.image.retrieve_from_cache! @board.image_cache
         else
             flash.now[:danger] =  t('boards.new.fail', item: Board.model_name.human)
             render new_board_path
@@ -25,6 +24,6 @@ class BoardsController < ApplicationController
     private
     
     def board_params
-        params.require(:board).permit(:title, :body, :board_image)
+        params.require(:board).permit(:title, :body, :board_image, :board_image_cache)
     end
 end
