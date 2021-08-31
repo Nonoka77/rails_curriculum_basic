@@ -1,4 +1,5 @@
 class Board < ApplicationRecord
+    has_many :comments, dependent: :destroy
     belongs_to :user
     mount_uploader :board_image, BoardImageUploader
     validates :title, presence: true, length: { maximum: 255}
