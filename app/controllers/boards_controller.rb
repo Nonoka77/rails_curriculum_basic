@@ -13,9 +13,9 @@ class BoardsController < ApplicationController
 
     def create
         @board = current_user.boards.new(board_params)
-        binding.pry
         if @board.save
             redirect_to boards_path, success: t('boards.new.success', item: Board.model_name.human)
+            @board.image.retrieve_from_cache! @board.image_cache
         else
             flash.now[:danger] =  t('boards.new.fail', item: Board.model_name.human)
             render new_board_path
