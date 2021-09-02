@@ -5,8 +5,8 @@ class CommentsController < ActionController::Base
             redirect_to board_path(comment.board)
             flash[:success] = t('comments.create.success')
         else
-            flash[:danger] = t('comments.create.fail')
             redirect_to board_path(comment.board)
+            flash[:danger] = t('comments.create.fail')
         end
     end
 
