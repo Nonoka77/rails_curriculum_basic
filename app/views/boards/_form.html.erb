@@ -1,6 +1,6 @@
 
 <%= form_with model: board, local: true do |f| %>
-  <%= render 'shared/error_message', model: f.object %>
+  <%= render 'shared/error_message', object: f.object %>
   <div class="form-group">
   <%= f.label :title %>
   <%= f.text_field :title, class: "form-control" %>          

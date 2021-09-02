@@ -1,18 +1,21 @@
 class BoardsController < ApplicationController
     def index
-        @boards = Board.all.eager_load(:user).order(created_at: :desc)
+        @boards = Board.all.includes(:user).order(created_at: :desc)
     end
 
     def new
-        @board = current_user.boards.new
+        @board = Board.new
     end
 
     def show
         @board = Board.find(params[:id])
+        @comment = Comment.new
+        @comments = @board.comments.includes(:user).order(created_at: :desc)
     end
 
+
     def create
-        @board = current_user.boards.new(board_params)
+        @board = current_user.boards.build(board_params)
         if @board.save
             redirect_to boards_path, success: t('boards.new.success', item: Board.model_name.human)
         else
@@ -20,9 +23,14 @@ class BoardsController < ApplicationController
             render new_board_path
         end
     end
+
+    def destroy
+        @board.destroy
+        redirect_to boards_url, success: t('comments.destroy.success')
+    end
     
     private
-    
+
     def board_params
         params.require(:board).permit(:title, :body, :board_image, :board_image_cache)
     end

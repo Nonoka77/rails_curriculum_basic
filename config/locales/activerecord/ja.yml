@@ -14,3 +14,6 @@ ja:
         title: 'タイトル'
         body: '本文'
         board_image: 'サムネイル'
+      comment:
+        comment: 'コメント'
+        title: 'コメント'

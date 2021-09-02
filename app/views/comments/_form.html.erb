@@ -1,0 +1,9 @@
+
+<%= form_with model: [board, comment], local: true do |f| %>
+<%= render 'shared/error_message', object: f.object %>
+    <%= f.label :title %>
+    <%= f.text_area :body ,class: 'form-control', rows: '2'%> <br>
+    <%= f.submit class: 'btn btn-primary', name: 'commit' %>
+<% end %>
+
+

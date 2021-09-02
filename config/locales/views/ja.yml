@@ -7,6 +7,7 @@ ja:
     register: '登録'
     logout: 'ログアウト'
     require_login: 'ログインしてください'
+    post: '投稿'
   users:
     new:
       title: 'ユーザー登録'
@@ -34,8 +35,16 @@ ja:
     new:
       success: "%{item}を作成しました"
       fail: "%{item}を作成できませんでした"
+    show:
+      title: '掲示板詳細'
     bookmarks:
       title: 'ブックマーク一覧'
   profiles:
     show:
       title: 'プロフィール'
+  comments:
+    create:
+      success: 'コメントを作成しました'
+      fail: 'コメントを作成できませんでした'
+    destroy:
+      success: 'コメントを削除しました'
