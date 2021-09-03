@@ -27,12 +27,12 @@ ja:
       success: 'ログアウトしました'
   boards:
     defaults:
-      title: '掲示板作成'
       board_image: 'サムネイル'
     index:
-      index_title: '掲示板一覧'
+      title: '掲示板一覧'
       fail: ' 掲示板がありません'
     new:
+      title: '掲示板作成'
       success: "%{item}を作成しました"
       fail: "%{item}を作成できませんでした"
     show:
