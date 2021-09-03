@@ -37,6 +37,13 @@ ja:
       fail: "%{item}を作成できませんでした"
     show:
       title: '掲示板詳細'
+    edit:
+      title: '掲示板編集'
+    update:
+      success: '掲示板を更新しました'
+      fail: '掲示板を更新できませんでした'
+    destroy:
+      success: '掲示板を削除しました'
     bookmarks:
       title: 'ブックマーク一覧'
   profiles:

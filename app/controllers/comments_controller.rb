@@ -1,6 +1,6 @@
 class CommentsController < ActionController::Base
     def create
-        comment = current_user.comments.build(comment_params)
+        comment = current_user.comments.new(comment_params)
         if comment.save
             redirect_to board_path(comment.board)
             flash[:success] = t('comments.create.success')
