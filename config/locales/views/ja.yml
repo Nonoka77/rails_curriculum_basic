@@ -40,10 +40,11 @@ ja:
     edit:
       title: '掲示板編集'
     update:
-      success: '掲示板を更新しました'
-      fail: '掲示板を更新できませんでした'
+      success: '%{item}を更新しました'
+      fail: '%{item}を更新できませんでした'
     destroy:
-      success: '掲示板を削除しました'
+      success: '%{item}を削除しました'
+      ask: '削除しますか？'
     bookmarks:
       title: 'ブックマーク一覧'
   profiles:

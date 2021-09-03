@@ -1,5 +1,5 @@
 class BoardsController < ApplicationController
-    before_action :set_board, only: %i[show edit destroy update]
+    before_action :set_board, only: %i[edit destroy update]
     def index
         @boards = Board.all.includes(:user).order(created_at: :desc)
     end
@@ -11,6 +11,7 @@ class BoardsController < ApplicationController
     def edit; end
 
     def show
+        @board = Board.find(params[:id])
         @comment = Comment.new
         @comments = @board.comments.includes(:user).order(created_at: :desc)
     end
@@ -28,22 +29,22 @@ class BoardsController < ApplicationController
 
     def update
         if @board.update(board_params)
-            redirect_to board_path(@board), success: t('boards.update.success')
+            redirect_to @board, success: t('boards.update.success', item: Board.model_name.human)
         else
             render :edit
-            flash.now[:danger] = t('boards.update.fail')
+            flash.now[:danger] = t('boards.update.fail', item: Board.model_name.human)
         end
     end
 
     def destroy
-        @board.destroy
-        redirect_to boards_path, success: t('boards.destroy.success')
+        @board.destroy!
+        redirect_to boards_path, success: t('boards.destroy.success', item: Board.model_name.human)
     end
     
     private
 
     def set_board
-        @board = Board.find(params[:id])
+        @board = current_user.boards.find(params[:id])
     end
 
     def board_params
