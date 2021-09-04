@@ -56,3 +56,6 @@ ja:
       fail: 'コメントを作成できませんでした'
     destroy:
       success: 'コメントを削除しました'
+  bookmarks:
+    success: 'ブックマークしました'
+    fail: 'ブックマークを外しました'

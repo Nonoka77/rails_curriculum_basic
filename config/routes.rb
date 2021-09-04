@@ -7,8 +7,11 @@ Rails.application.routes.draw do
   delete 'logout', to: 'user_sessions#destroy', as: :logout
   
   resources :users, only: %i[new create index]
+  
   resources :boards do
-    resources :comments, only: %i[create], shallow: true 
+    resources :comments, only: %i[create], shallow: true
+    get :bookmarks, on: :collection
+    resources :bookmarks, only: %i[create destroy]
   end
 
   get '*path', controller: 'application', action: 'render_404'
