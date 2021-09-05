@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'bookmarks/create'
+  get 'bookmarks/destroy'
   root 'static_pages#top'
   get 'static_pages/top', to: 'static_pages#top'
   
@@ -10,9 +12,11 @@ Rails.application.routes.draw do
   
   resources :boards do
     resources :comments, only: %i[create], shallow: true
-    get :bookmarks, on: :collection
-    resources :bookmarks, only: %i[create destroy]
+    collection do
+      get 'bookmarks'
+    end
   end
+  resources :bookmarks, only: %i[create destroy]
 
   get '*path', controller: 'application', action: 'render_404'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
