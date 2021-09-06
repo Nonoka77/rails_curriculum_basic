@@ -22,4 +22,9 @@
     font-size: 2.0rem;
   }
 }
+
+.dropdown_item {
+  color: black;
+  list-style: none;
+}
 /*# sourceMappingURL=top.css.map */

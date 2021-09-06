@@ -47,6 +47,7 @@ ja:
       ask: '削除しますか？'
     bookmarks:
       title: 'ブックマーク一覧'
+      no_result: 'ブックマーク中の掲示板がありません'
   profiles:
     show:
       title: 'プロフィール'
@@ -57,5 +58,7 @@ ja:
     destroy:
       success: 'コメントを削除しました'
   bookmarks:
-    success: 'ブックマークしました'
-    fail: 'ブックマークを外しました'
+    create:
+      success: 'ブックマークしました'
+    destroy:
+      success: 'ブックマークを外しました'

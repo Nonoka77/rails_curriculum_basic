@@ -4,13 +4,12 @@
           　　<%= image_tag board.board_image.url, class: 'card-img-top img-fluid', size: '300x200'%>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#">
-                <%= link_to board.title, board_path(board.id) %></a>
+                <%= link_to board.title, board_path(board.id) %>
               </h4>
               <% if current_user.own? (board) %>
                 <%= render 'crud_menus', board: board %>
               <% else %>
-                  <%= render 'bookmarks/bookmark_button', { board: board} %>
+                  <%= render 'bookmark_button', { board: board} %>
               <% end %>
               <ul class="list-inline">
                 <li class="list-inline-item">
