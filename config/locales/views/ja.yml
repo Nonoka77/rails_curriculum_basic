@@ -31,7 +31,7 @@ ja:
     index:
       title: '掲示板一覧'
       fail: ' 掲示板がありません'
-    new:
+    create:
       title: '掲示板作成'
       success: "%{item}を作成しました"
       fail: "%{item}を作成できませんでした"
