@@ -15,7 +15,7 @@
               <%= render 'crud_menus', board: @board if current_user.own?(@board) %>
               <ul class="list-inline">
                 <li class="list-inline-item"><%= @board.user.decorate.full_name %></li>
-                <li class="list-inline-item"><%= l @board.created_at, format: :defaults %></li>
+                <li class="list-inline-item"><%= l @board.created_at, format: :long %></li>
               </ul>
             </div>
           </div>
@@ -33,12 +33,5 @@
   </div>
 
   <!-- コメントエリア -->
-<div class="container pt-5">
-  <div class="row mb-3">
-    <div class="col-lg-8 offset-lg-2">
-      <% if @comments.present? %>
-      <%= render partial:'comments/comment', collection: @comments, as: :comment %>
-      <% end %>
-    </div>
-  </div>
+      <%= render 'comments/comments', {comments: @comments} %>
 </div>

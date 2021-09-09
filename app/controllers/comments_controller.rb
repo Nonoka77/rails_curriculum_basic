@@ -1,14 +1,13 @@
 class CommentsController < ActionController::Base
-    before_action :require_login
+    before_action :require_login, only: %i[create destroy]
     def create
-        comment = current_user.comments.new(comment_params)
-        if comment.save
-            redirect_to board_path(comment.board)
-            flash[:success] = t('.success')
-        else
-            redirect_to board_path(comment.board)
-            flash[:danger] = t('.fail')
-        end
+        @comment = current_user.comments.new(comment_params)
+        @comment.save #ここで！を付けてしまうとエラーがページ上に表示されなくなってしまう
+    end
+
+    def destroy
+        @comment = current_user.comments.find(params[:id])
+        @comment.destroy!
     end
 
     private
