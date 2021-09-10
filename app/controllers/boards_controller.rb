@@ -3,7 +3,6 @@ class BoardsController < ApplicationController
     before_action :require_login
     def index
         @q = Board.ransack(params[:q])
-        binding.pry
         @boards = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page])
     end
 

@@ -8,6 +8,8 @@ ja:
     logout: 'ログアウト'
     require_login: 'ログインしてください'
     post: '投稿'
+    upload: '更新する'
+    edit: '編集'
   users:
     new:
       title: 'ユーザー登録'
@@ -49,6 +51,11 @@ ja:
       title: 'ブックマーク一覧'
       no_result: 'ブックマーク中の掲示板がありません'
   profiles:
+    edit:
+      title: 'プロフィール編集'
+    update:
+      success: 'ユーザーを更新しました'
+      fail: 'ユーザーを更新できませんでした'
     show:
       title: 'プロフィール'
   comments:

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'profiles/show'
+  get 'profiles/edit'
   get 'bookmarks/create'
   get 'bookmarks/destroy'
   root 'static_pages#top'
@@ -10,6 +12,8 @@ Rails.application.routes.draw do
   
   resources :users, only: %i[new create index]
   
+  resource :profiles, only: %i[show edit update]
+  
   resources :boards do
     resources :comments, only: %i[create destroy], shallow: true
     collection do
@@ -17,6 +21,7 @@ Rails.application.routes.draw do
     end
   end
   resources :bookmarks, only: %i[create destroy]
+
 
   get '*path', controller: 'application', action: 'render_404'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
