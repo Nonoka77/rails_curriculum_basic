@@ -15,7 +15,9 @@
 //= require bootstrap-sprockets
 //= require rails-ujs
 //= require activestorage
-//= require_tree .
+//= require admin.js
+//= require cable.js
+//= require common.js
 
 import 'bootstrap';
 import '../stylesheets/application';

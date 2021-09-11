@@ -16,6 +16,11 @@ class User < ApplicationRecord
   validates :reset_password_token, uniqueness: true, allow_nil: true
   mount_uploader :avatar, AvatarUploader
 
+  enum role:
+  {
+    general: 0,
+    admin: 1
+  }
 
   def own?(object)
     id == object.user_id
