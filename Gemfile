@@ -58,6 +58,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'bullet'
+  gem 'letter_opener_web'
 end
 
 group :test do
@@ -77,3 +78,4 @@ gem "mini_magick"
 gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
 gem 'ransack'
+gem 'config'

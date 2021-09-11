@@ -24,6 +24,7 @@ Rails.application.routes.draw do
 
   resources :password_resets, only: %i[create new edit update]
 
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 
   get '*path', controller: 'application', action: 'render_404'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
