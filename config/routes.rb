@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    get 'users/index'
+    get 'users/show'
+    get 'users/edit'
+    get 'users/update'
+  end
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   get 'profiles/show'
   get 'profiles/edit'
