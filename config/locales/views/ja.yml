@@ -10,6 +10,7 @@ ja:
     post: '投稿'
     upload: '更新する'
     edit: '編集'
+    not_authorized: '権限がありません'
   users:
     new:
       title: 'ユーザー登録'
@@ -80,3 +81,8 @@ ja:
     update: 
       success: パスワードを変更しました'
       fail:  'パスワードの変更に失敗しました'
+
+  admin:
+    dashboards:
+      index:
+        title: 'ダッシュボード'
