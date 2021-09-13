@@ -3,7 +3,7 @@
   <h1><%= t('.title') %></h1>
   <div class="row">
     <div class="col-md-12 mb-3">
-      <%= render 'search', q: @q, url: admin_boards_path %>
+      <%= render 'search_form'%>
     </div>
   </div>
   <div class="row">
@@ -13,13 +13,13 @@
         <tr>
           <th scope="col"><%= Board.human_attribute_name(:id) %></th>
           <th scope="col"><%= Board.human_attribute_name(:title) %></th>
-          <th scope="col"><%= User.human_attribute_name(:name) %></th>
+          <th scope="col"><%= Board.human_attribute_name(:user) %></th>
           <th scope="col"><%= Board.human_attribute_name(:created_at) %></th>
           <th scope="col"></th>
         </tr>
         </thead>
         <tbody>
-        <%= render partial: 'board', collection: @boards, as: :board %>
+        <%= render @boards %>
         </tbody>
       </table>
     </div>

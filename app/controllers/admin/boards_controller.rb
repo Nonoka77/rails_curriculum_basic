@@ -1,28 +1,23 @@
-class Admin::BoardsController < ApplicationController
+class Admin::BoardsController < Admin::BaseController
 before_action :set_board, only: %i[edit destroy update show]
-    before_action :require_login
     def index
         @q = Board.ransack(params[:q])
         @boards = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page])
-    end
-
-    def new
-        @board = Board.new
     end
 
     def edit; end
 
     def show; end
 
-
     def update
         if @board.update(board_params)
-            redirect_to @board, success: t('.success', item: Board.model_name.human)
+            redirect_to admin_board_path(@board), success: t('.success', item: Board.model_name.human)
         else
             render :edit
             flash.now[:danger] = t('.fail', item: Board.model_name.human)
         end
     end
+    
 
     def destroy
         @board.destroy!

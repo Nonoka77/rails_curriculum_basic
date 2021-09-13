@@ -83,6 +83,31 @@ ja:
       fail:  'パスワードの変更に失敗しました'
 
   admin:
+    defaults: 
+      search_word: '検索ワード'
+      unspecified: '指定なし'
+      message:
+        delete_confirm: '削除しますか？' 
     dashboards:
       index:
         title: 'ダッシュボード'
+    boards:
+      index:
+        title: '掲示板一覧'
+      update:
+        success: '%{item}を更新しました'
+        fail: '%{item}を更新しました'
+      destroy:
+        success: '%{item}を削除しました'
+    users:
+      index:
+        title: 'ユーザー一覧'
+      update:
+        success: 'ユーザーを更新しました'
+        fail: '更新できませんでした'
+      destroy:
+        success: 'ユーザーを削除しました'
+      show:
+        title: 'ユーザー詳細'
+      edit:
+        title: 'ユーザー編集'

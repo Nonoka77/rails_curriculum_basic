@@ -1,10 +1,4 @@
 Rails.application.routes.draw do
-  namespace :admin do
-    get 'users/index'
-    get 'users/show'
-    get 'users/edit'
-    get 'users/update'
-  end
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   get 'profiles/show'
   get 'profiles/edit'
@@ -12,16 +6,18 @@ Rails.application.routes.draw do
   get 'bookmarks/destroy'
   root 'static_pages#top'
   get 'static_pages/top', to: 'static_pages#top'
-
+  
   get '/login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
-
+  
   namespace :admin do
     root 'dashboards#index'
     get '/login', to: 'user_sessions#new'
     post 'login', to: 'user_sessions#create'
     delete 'logout', to: 'user_sessions#destroy'
+    resources :users, only: %i[show edit update index destroy]
+    resources :boards, only: %i[show edit update index destroy]
   end
 
   resources :users, only: %i[new create index]
