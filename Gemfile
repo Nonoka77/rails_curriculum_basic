@@ -32,6 +32,10 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+gem 'bootstrap', '~> 4.6'
+gem 'font-awesome-sass'
+gem 'jquery-rails'
+
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'faker'
@@ -43,6 +47,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rspec_junit_formatter'
   ## ここまで
+  gem 'faker'
 end
 
 group :development do
@@ -52,6 +57,8 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'bullet'
+  gem 'letter_opener_web'
 end
 
 group :test do
@@ -61,3 +68,15 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'sorcery'
+gem 'pry-byebug'
+gem 'rails-i18n'
+gem 'draper'
+gem 'font-awesome-sass'
+gem 'carrierwave', '~> 2.0'
+gem "mini_magick"
+gem 'kaminari'
+gem 'bootstrap4-kaminari-views'
+gem 'ransack'
+gem 'config'
+gem 'enum_help'

@@ -1,0 +1,9 @@
+<%= form_with model: [board, comment], id: 'new-comment'  do |f| %>
+    <div class= 'form-group'>
+        <%= f.label :title %>
+        <%= f.text_area :body ,class: 'form-control', id: 'js-new-comment-body', rows: '2'%> <br>
+    </div>
+    <%= f.submit class: 'btn btn-primary', name: 'commit' %>
+<% end %>
+
+

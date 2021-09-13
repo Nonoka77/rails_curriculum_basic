@@ -17,6 +17,18 @@ require 'sprockets/railtie'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+module BoardApp
+  class Application < Rails::Application
+    config.time_zone = 'Tokyo'
+    config.active_record.default_timezone = :local
+
+    # 　以下の記述を追記する(設定必須)
+    # デフォルトのlocaleを日本語(:ja)にする
+    config.i18n.default_locale = :ja
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
+  end
+end
+
 module RunteqNormal
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
@@ -29,5 +41,18 @@ module RunteqNormal
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+  end
+end
+
+module AvoidMakeFile
+  class Application < Rails::Application
+    config.load_defaults 5.2
+
+    config.generators do |g|
+      g.helper false # ここから追記
+      g.assets false          # CSS, JavaScriptファイル生成せず
+      g.skip_routes false     # trueならroutes.rb変更せず、falseなら通常通り変更
+      g.test_framework false  # testファイル生成せず
+    end                       # ここまで
   end
 end
