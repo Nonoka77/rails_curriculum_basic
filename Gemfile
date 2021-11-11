@@ -46,8 +46,6 @@ group :development, :test do
   gem 'rubocop-checkstyle_formatter'
   gem 'rspec-rails'
   gem 'rspec_junit_formatter'
-  ## ここまで
-  gem 'faker'
 end
 
 group :development do
@@ -72,9 +70,8 @@ gem 'sorcery'
 gem 'pry-byebug'
 gem 'rails-i18n'
 gem 'draper'
-gem 'font-awesome-sass'
 gem 'carrierwave', '~> 2.0'
-gem "mini_magick"
+gem 'mini_magick'
 gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
 gem 'ransack'

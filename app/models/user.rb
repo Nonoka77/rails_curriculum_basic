@@ -37,6 +37,4 @@ class User < ApplicationRecord
   def unbookmark(board)
     bookmark_boards.destroy(board)
   end
-
 end
-
